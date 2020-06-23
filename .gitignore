@@ -1,0 +1,10 @@
+Almaz.VC.db
+.sp/
+.vs/
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Plugins/OceanPlugin/Binaries
+Plugins/OceanPlugin/Intermediate
+Saved/

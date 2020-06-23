@@ -1,0 +1,22 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{A78AB8EC-4A74-A680-7CD1-29AF141AFB7E}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "AlmazCPP",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "OceanPlugin",
+			"Enabled": true
+		}
+	]
+}
