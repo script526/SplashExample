@@ -36,7 +36,15 @@ https://gfycat.com/ru/speedysickakitainu
 
 - SplashComponent allows you to set up a grid which represents where the traces should come from. For better results check 'use complex collision' for traces and set up this type of collision in the hull mesh settings. Traces are needed to get set of locations close to the hull regardless of the hull mesh. The system curently works only with simmetrical hulls (meaning that there should be the same amount of hit locations on both left and right sides of the hull)
 
+![image](https://github.com/script526/SplashExample/blob/master/grid.JPG)
+
+There settings allows you to tweak the grid dimentions. It also rotates and moves with the actor. Note that the forward vector of the ship/bpat should be the X axis (needs to be fixed probably so that it's independent)
+
+![image](https://github.com/script526/SplashExample/blob/master/splash_settings.JPG)
+
 - Pressing 'Create Particle Handlers' button in the SplashComponent detailes will create muliple ParticleHandlers across the hull
+
+![image](https://github.com/script526/SplashExample/blob/master/particle_locations.JPG)
 
 - You can also 'Remove Particle Handlers' and start from the beginning
 
