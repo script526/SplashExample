@@ -43,6 +43,8 @@ https://gfycat.com/ru/speedysickakitainu
 
 - The reason we are creating this joint ParticleHandler components is because apparently, UParticleComponent is not intended to inherit from (I have tried multiple times but the particles won't emit no matter what). That's why particle components are being created inside the ParticleHandler class as instances (see 'PSC' pointer in the constructor)
 
+- The actual particle system asset is in Content/Assets/Particles/Splashes/P_Splash. The reason you can't see anything useful when opening it up is because most of its values are driven though the code using Unreal 'particle parameters' feature
+
 # Questions
 
 - My name is Alexander Alikin (Saint-Petersburg, Russia), if you have any questions you can find me in the OceanCommunityProject discord channel: https://discord.gg/TgzMRT (nickname '</script>') or on Facebook: https://www.facebook.com/aaalikin
