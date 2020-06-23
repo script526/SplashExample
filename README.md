@@ -36,13 +36,13 @@ https://gfycat.com/ru/speedysickakitainu
 
 - SplashComponent allows you to set up a grid which represents where the traces should come from. For better results check 'use complex collision' for traces and set up this type of collision in the hull mesh settings. Traces are needed to get set of locations close to the hull regardless of the hull mesh. The system curently works only with simmetrical hulls (meaning that there should be the same amount of hit locations on both left and right sides of the hull)
 
-- When pressing 'Create Particle Handlers' button in the SplashComponent detailes muliple ParticleHandlers are being created across the hull
+- Pressing 'Create Particle Handlers' button in the SplashComponent detailes will create muliple ParticleHandlers across the hull
 
 - You can also 'Remove Particle Handlers' and start from the beginning
 
 - Once you satisfied with the result you can press Play
 
-- The reason we are creating this joint ParticleHandler components is because apparently, UParticleComponent is not intended to inherit from (I have tried multiple times but the particles won't emit no matter what). That's why particle components are being created inside the ParticleHandler class as instances (see 'PSC' pointer in the constructor)
+- The reason we are creating this joint ParticleHandler components is because apparently, UParticleComponent is not intended to inherit from (I have tried multiple times but the particles won't emit no matter what). That's why particle components are created inside the ParticleHandler class as instances (see 'PSC' pointer in the constructor)
 
 - The actual particle system asset is in Content/Assets/Particles/Splashes/P_Splash. The reason you can't see anything useful when opening it up is because most of its values are driven though the code using Unreal 'particle parameters' feature
 
