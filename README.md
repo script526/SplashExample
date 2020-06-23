@@ -1,24 +1,50 @@
-# Almaz
- A gorgeous game about the sailor on a ship
+# What is it
+ 
+This is an unfinished system which allows you to have water splashes across the ship/boat hull causing by its movement across the water. The system requires certain components from the Ocean Community Project: https://github.com/UE4-OceanProject (see 'Dependencies')
 
-![image](https://sun9-44.userapi.com/c849532/v849532763/47bde/0XlAKGz3nlQ.jpg)
+Video how it looks:
+
+https://gfycat.com/ru/unconsciousbetterimperatorangel
+https://gfycat.com/ru/speedysickakitainu
+
+# Dependencies
+
+- UE4 4.25 (tested with source build but should work with binary version as well
+
+- BP_Ocean placed in the level
+
+- BuoyancyForce Component
+
+- Ocean Manager class
 
 # Getting Started
 
-- Download the repository to the desired folder on your desktop.
+- Compile and run
 
-- Download to a separate folder UE4 source code (4.22 branch) with TrueSky Plugin in it: https://github.com/simul/UnrealEngine
+- The Content/Levels/SplashExample map should be loaded
 
-- Run batch files and compile the engine via this instructions: https://docs.simul.co/unreal/source
+- Press play and swim around
 
-- Launch the engine and open the Almaz project. It will ask you to open a copy (since the project was made in an older version of the engine) but force it to open the existing project without making a copy.
+- If you don't see any splashes for some reason go to the Splash Component attached to the boat and set up particle components (see section 'How it works' below)
 
-- Visual Studio 2017 with Windows SDK is required to be installed to open a project (it will generate and compile missing files)
+# How it works
 
-# Notes
+- The system consists of three classes: SplashComponent, ParticleHandler and DistributionVectorUniformParam.
 
-- `git push` has a limit of 100Mb per file and 1Gb per push. When manually uploading using Github.com it has limits 25Mb per file and 100 files per one upload
+- You add the SplashComponent to the boat/ship (assuming that you're starting fresh in some another project or with another boat/ship)
 
-- Github recommends keeping the repository size under 1Gb, but [apparently](https://help.github.com/en/articles/what-is-my-disk-quota) the actual size could be under 100Gb
+- SplashComponent allows you to set up a grid which represents where the traces should come from. For better results check 'use complex collision' for traces and set up this type of collision in the hull mesh settings. Traces are needed to get set of locations close to the hull regardless of the hull mesh. The system curently works only with simmetrical hulls (meaning that there should be the same amount of hit locations on both left and right sides of the hull)
 
-- Source control in UE4 allows to check out (lock from editing by another user) and check in files and also make commits for certain files directly from the editor. More info: https://docs.unrealengine.com/en-US/Engine/UI/SourceControl/index.html
+- When pressing 'Create Particle Handlers' button in the SplashComponent detailes muliple ParticleHandlers are being created across the hull
+
+- You can also 'Remove Particle Handlers' and start from the beginning
+
+- Once you satisfied with the result you can press Play
+
+- The reason we are creating this joint ParticleHandler components is because apparently, UParticleComponent is not intended to inherit from (I have tried multiple times but the particles won't emit no matter what). That's why particle components are being created inside the ParticleHandler class as instances (see 'PSC' pointer in the constructor)
+
+# Questions
+
+- My name is Alexander Alikin (Saint-Petersburg, Russia), if you have any questions you can find me in the OceanCommunityProject discord channel: https://discord.gg/TgzMRT (nickname '</script>') or on Facebook: https://www.facebook.com/aaalikin
+
+
